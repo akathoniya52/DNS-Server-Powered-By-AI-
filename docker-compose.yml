@@ -1,0 +1,13 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  app:
+    build:
+      context: .  # Build from the current directory
+      dockerfile: Dockerfile  # Specify the Dockerfile
+    ports:
+      - "8000:8000"  # Map port 3000 on the host to port 3000 in the container
+    volumes:
+      - .:/usr/src/app  # Mount the current directory to the container
+    environment:
+      NODE_ENV: development  # Set environment variables if needed
